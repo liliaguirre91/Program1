@@ -1,5 +1,15 @@
-<project name="WebServer" default="compile" basedir=".">
+<project name="WebServer" default="compile">
 	<target name="compile">
-		<javac srcdir="." destdir="."/>
+		<javac srcdir="." destdir="." includeantruntime="true"/>
 	</target>
+    
+    <target name="run">
+        <jar destfile="./WebServer.jar" basedir="./">
+             <manifest>
+                 <attribute name="Main-Class" value="WebServer"/>
+             </manifest>
+         </jar>
+                 
+        <java jar="WebServer.jar" fork="true"/>
+    </target>
 </project>

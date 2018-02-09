@@ -1,4 +1,4 @@
-<project name="WebServer" default="compile">
+<project name="WebServer" default="compile" basedir=".">
 	<target name="compile">
 		<javac srcdir="." destdir="."/>
 	</target>
